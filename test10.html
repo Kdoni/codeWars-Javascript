@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function friend(friends) {
+            var friendList = [];
+            for (var i = 0; i < friends.length; i++) {
+                if (friends[i].length === 4) {
+                    friendList.push(friends[i]);
+                }
+            }
+            return friendList;
+        }
+        var test = friend(["Mark", "George", "Jake"]);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
