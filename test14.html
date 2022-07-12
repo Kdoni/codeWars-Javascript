@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function accum(s) {
+            var result = "";
+            var splitted = s.toLowerCase().split("");
+            for (var i = 0; i < splitted.length; i++) {
+                result += splitted[i].toUpperCase() + splitted[i].repeat(i) + "-";
+            }
+            return result.slice(0, result.length - 1);
+        }
+        var test = accum("garbSutGoglou");
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
