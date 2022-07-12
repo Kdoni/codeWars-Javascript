@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function betterThanAverage(classPoints, yourPoints) {
+            var sum = classPoints.reduce((accumulator, currentValue) => accumulator + currentValue);
+            var datum = (sum + yourPoints) / ((classPoints.length) + 1);
+            if (yourPoints > datum) {
+                return true;
+            }
+            return false;
+        }
+        // function betterThanAverage(classPoints, yourPoints) {
+        //     // var sum = classPoints.reduce((accumulator, currentValue) => accumulator + currentValue);
+        //     // return sum;
+        // }
+        // var test = betterThanAverage([12, 42, 521, 23, 13], 32);
+        // console.log(test);
+    </script>
+
+</body>
+
+</html>
