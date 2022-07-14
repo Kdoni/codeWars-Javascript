@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function validatePIN(pin) {
+            if (pin.length === 4 || pin.length === 6) {
+                for (var i = 0; i < pin.length; i++) {
+                    const digit = parseInt(pin[i]);
+                    if (isNaN(digit)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+        var test = validatePIN("1234ad");
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
