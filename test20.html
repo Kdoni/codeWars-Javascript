@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fakeBin(x) {
+            var newArray = [];
+            var emptyArray = [];
+            for (var i = 0; i < x.length; i++) {
+                emptyArray.push(x[i]);
+            }
+            for (var x = 0; x < emptyArray.length; x++) {
+                if (emptyArray[x] < 5) {
+                    var five = emptyArray[x] = "0";
+                    newArray.push(five);
+                } else if (emptyArray[x] >= 5) {
+                    var zero = emptyArray[x] = "1";
+                    newArray.push(zero);
+                }
+            }
+            return newArray.reduce((a, b) => a + b);
+        }
+        var test = fakeBin("16332");
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
