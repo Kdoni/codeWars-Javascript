@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var array = [1, 2, -130, 53, 63, 6];
+        function highestNumber(n) {
+            var low = Infinity;
+            for (var i = 0; i < n.length; i++) {
+                if (n[i] < low) {
+                    low = n[i];
+                }
+            }
+            return low;
+        }
+        var test = highestNumber(array);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>

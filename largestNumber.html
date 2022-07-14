@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function largestNumber(n) {
+            var high = -Infinity;
+            for (var i = 0; i < n.length; i++) {
+                if (n[i] > high) {
+                    high = n[i];
+                }
+            }
+            return high;
+        }
+        var array = [22, 4, 2, 12];
+        var test = largestNumber(array);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
