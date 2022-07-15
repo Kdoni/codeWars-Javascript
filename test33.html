@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findEvenIndex(arr) {
+            var positiveIndex = 0;
+            var negativeIndex = 0;
+            for (var i = 1; i < arr.length - 1; i++) {
+                const array = [...arr]
+                const array1 = [...arr]
+                positiveIndex = array.splice(0, i).reduce((a, b) => a + b, 0);
+                negativeIndex = array1.splice(i + 1).reduce((a, b) => a + b, 0);
+                console.log(positiveIndex);
+                console.log(negativeIndex, i);
+                if (positiveIndex === negativeIndex) {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+        var test = findEvenIndex([12, 12, 12, 3, 12, 12, 12]);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
