@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPangram(string) {
+            var emptyArray = [];
+            let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+            let ulphabet = alphabet.split("");
+            var noSpace = string.replace(/[ 0-9-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g, "");
+            // console.log(new Set(noSpace)); 
+            for (var i = 0; i < noSpace.length; i++) {
+                if (noSpace[i] !== noSpace[i + 1]) {
+                    emptyArray.push(noSpace[i].toLowerCase());
+                }
+            }
+            console.log([...new Set(emptyArray.sort())]);
+
+            return [...new Set(emptyArray.sort())].length === alphabet.length;
+        }
+        var test = isPangram("a422(&^2")
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
