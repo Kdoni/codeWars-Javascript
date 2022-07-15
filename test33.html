@@ -13,13 +13,9 @@
         function findEvenIndex(arr) {
             var positiveIndex = 0;
             var negativeIndex = 0;
-            for (var i = 1; i < arr.length - 1; i++) {
-                const array = [...arr]
-                const array1 = [...arr]
-                positiveIndex = array.splice(0, i).reduce((a, b) => a + b, 0);
-                negativeIndex = array1.splice(i + 1).reduce((a, b) => a + b, 0);
-                console.log(positiveIndex);
-                console.log(negativeIndex, i);
+            for (var i = 0; i < arr.length - 1; i++) {
+                positiveIndex = arr.slice(0, i).reduce((a, b) => a + b, 0);
+                negativeIndex = arr.slice(i + 1).reduce((a, b) => a + b, 0);
                 if (positiveIndex === negativeIndex) {
                     return i;
                 }
@@ -27,7 +23,7 @@
 
             return -1;
         }
-        var test = findEvenIndex([12, 12, 12, 3, 12, 12, 12]);
+        var test = findEvenIndex([12, 12, 12, 3, 4, 3, 12, 12, 12]);
         console.log(test);
     </script>
 
