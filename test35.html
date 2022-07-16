@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function printerError(s) {
+            counter = 0;
+            var legit = "abcdefghijklm";
+            var splitLegit = legit.split("");
+            var splitS = s.split("");
+            for (var i = 0; i < s.length; i++) {
+                if (!splitLegit.includes(splitS[i])) {
+                    counter++
+                }
+            }
+            return counter + "/" + s.length;
+        }
+        var test = printerError("xbcdgadgagugazdaa");
+        console.log(test);
+        console.log("     *")
+        console.log("    ***")
+        console.log("   *****")
+
+    </script>
+
+</body>
+
+</html>

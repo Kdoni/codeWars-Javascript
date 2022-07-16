@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function digPow(n, p) {
+            var splitted = n.toString().split("");
+            // console.log(splitted);
+            var result = splitted.map((a, i) => a ** (p + i));
+            // console.log(result);
+            var resultat = result.reduce((a, b) => a + b);
+            // console.log(resultat);
+            if (Number.isInteger(resultat / n)) {
+                return resultat / n;
+            }
+            return -1
+        }
+        var test = digPow([46288], 3);
+        console.log(test);
+    </script>
+</body>
+
+</html>
