@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function queueTime(customers, n) {
+            if (customers.length <= 0) {
+                return 0;
+            } else if (n >= customers.length) {
+                return Math.max(...customers);
+            } else if (n === 1) {
+                return customers.reduce((a, b) => a + b);
+            }
+            const queues = Array(n).fill().map((e) => [])
+            for (var i = 0; i < customers.length; i++) {
+                queues.sort((a, b) => a.reduce((a1, b1) => a1 + b1, 0) - b.reduce((a2, b2) => a2 + b2, 0))
+                queues[0].push(customers[i])
+            }
+            queues.sort((a, b) => a.reduce((a1, b1) => a1 + b1, 0) - b.reduce((a2, b2) => a2 + b2, 0))
+            return (queues[queues.length - 1].reduce((a, b) => a + b))
+        }
+        var test = queueTime([19, 48, 45, 37, 2, 21, 21, 34, 50, 2, 37, 18, 10, 38, 18, 1, 22], 2);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
