@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function order(words) {
+            var emptyObj = {};
+            var splitted = words.split(" ").sort((a, b) => {
+                var numberA = 0;
+                for (var i = 0; i < a.length; i++) {
+                    if (Number.isInteger(Number(a[i]))) {
+                        numberA = Number(a[i]);
+                    }
+                }
+                var numberB = 0;
+                for (var i = 0; i < b.length; i++) {
+                    if (Number.isInteger(Number(b[i]))) {
+                        numberB = Number(b[i]);
+                    }
+                }
+                return numberA - numberB;
+            });
+            return splitted.join(" ");
+        }
+        var test = order("4of Fo1r pe6ople g3ood th5e the2");
+        console.log(test);
+    </script>
+
+</body>
+
+</html>

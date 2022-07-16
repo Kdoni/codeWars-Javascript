@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        String.prototype.toJadenCase = function () {
+            var splitted = this.toLowerCase().split(" ").map(word => {
+                return word[0].toUpperCase() + word.substring(1);
+            }).join(" ");
+            return splitted
+            // var result = splitted.map(a => a[0].toUpperCase());
+            // console.log(result);
+        };
+        var test = "cringe Boy deboy of loy".toJadenCase();
+        console.log(test)
+    </script>
+
+</body>
+
+</html>
