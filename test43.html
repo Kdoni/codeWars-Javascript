@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function wave(str) {
+            // var trimmed = str.trim();
+            // var finalArray = [];
+            var emptyArray = [];
+            for (var i = 0; i < str.length; i++) {
+                if (str[i] !== " ") {
+                    var final = ""
+                    if (i > 0) {
+                        final += str.substring(0, i)
+                    }
+                    final += str[0 + i].toUpperCase() + str.substring(i + 1)
+                    emptyArray.push(final);
+                }
+            }
+            // for (var x = 0; x < emptyArray.length; x++) {
+            //     finalArray.push(str.substring(0, ((str.length - 1) - (emptyArray[x].length - 1))) + emptyArray[x]);
+            // }
+            console.log(emptyArray)
+            return emptyArray;
+        }
+        var test = wave("two words");
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
