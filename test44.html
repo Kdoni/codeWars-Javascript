@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function openOrSenior(data) {
+            var category = [];
+            for (var i = 0; i < data.length; i++) {
+                if (data[i][0] >= 55 && data[i][1] > 7) {
+                    category.push("Senior");
+                } else {
+                    category.push("Open");
+                }
+                //     for (var x = 0; x < data[i].length; x++) {
+                //         console.log(data[i][x]);
+                //     }
+            }
+            return category;
+        }
+        var test = openOrSenior([[45, 12], [55, 21], [19, -2], [104, 20]]);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
