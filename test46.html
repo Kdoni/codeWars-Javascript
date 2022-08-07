@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function countPositivesSumNegatives(input) {
+            var countNegative = 0;
+            var countPositive = 0;
+            if (input !== null) {
+                for (var i = 0; i < input.length; i++) {
+                    if (input[i] < 0) {
+                        countNegative += input[i];
+                    } else if (input[i] > 0) {
+                        countPositive++;
+                    }
+                }
+            }
+            if (countNegative === 0 && countPositive === 0) {
+                return [];
+            }
+            return [countPositive, countNegative];
+        }
+        var test = countPositivesSumNegatives([0, 0]);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
