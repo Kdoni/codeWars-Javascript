@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sumDigPow(a, b) {
+            var emptyArray = [];
+            for (var i = a; i <= b; i++) {
+                let result = i.toString().split("").map((kappa, keepo) => kappa ** (keepo + 1)).reduce((alpha, beta) => alpha + beta);
+                if (i === result) {
+                    emptyArray.push(result);
+                }
+            }
+            return emptyArray;
+        }
+        var test = sumDigPow(1, 1000000);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
