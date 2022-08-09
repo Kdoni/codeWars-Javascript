@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isIsogram(str) {
+            var small = str.toLowerCase();
+            for (var i = 0; i < small.length; i++) {
+                for (var x = 0; x < small.length; x++) {
+                    if (i === x) {
+                        continue;
+                    }
+                    if (small[i] === small[x]) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        var test = isIsogram("hell");
+        console.log(test);
+    </script>
+</body>
+
+</html>
