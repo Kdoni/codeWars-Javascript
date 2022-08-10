@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function twoSum(numbers, target) {
+            var result = [];
+            for (var i = 0; i < numbers.length; i++) {
+                for (var x = i + 1; x < numbers.length; x++) {
+                    if (numbers[i] + numbers[x] === target) {
+                        result.push(i);
+                        result.push(x);
+                        return result;
+                    }
+                }
+            }
+        }
+        var test = twoSum([-488, -654, -747, 302, -147, 789, 662, -747, -736, 8, -648, -492, 891, 554, 432, -452, 474, -487, 107, -256, -242, 680, 828, 896, 33, -322, 360, 154, 394, -517, 931, 383, 466, 528, 444, -880, -146, -892, -529, 500, -553, -252, -125, -499, -278, 452, -75, -334, 702, 499, 647, 882, 430, 608, -909, 346, 638, 585, 443, 554, 809, -674, -314, 966, -846, 249, -596, -615, -379, 643, 455, 972, -16, 254, -81, 525, -553, -388, 549, 561, -889, 50, 340, 940, -76, -282, -687, 318, -27, -499, -688, -175, 573, -399, 734, -935], 178);
+        console.log(test);
+    </script>
+</body>
+
+</html>
