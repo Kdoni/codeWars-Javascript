@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function domainName(url) {
+            if (url.startsWith("https://www.") || url.startsWith("http://www.") || url.startsWith("www.")) {
+                var x = url.slice(url.indexOf(".") + 1);
+                var y = x.split(".");
+                return y[0];
+            } else if ((url.startsWith("http"))) {
+                return url.slice(url.indexOf("/") + 2, url.indexOf("."));
+            } else {
+                return url.slice(0, url.indexOf("."));
+            }
+            // if (url.startsWith("http://www.")) {
+            //     return url.slice(url.indexOf(".") + 1, url.lastIndexOf("."));
+            // } else if (url.startsWith("https://www.")) {
+            //     return url.slice(url.indexOf(".") + 1, url.lastIndexOf("."));
+            // } else if (url.startsWith("www")) {
+            //     return url.slice(url.indexOf(".") + 1, url.lastIndexOf("."));
+            // } else if
+            //     (url.startsWith("http")) {
+            //     return url.slice(url.indexOf("/") + 2, url.indexOf("."));
+            // }
+            // else {
+            //     return url.slice(0, url.indexOf("."));
+            // }
+        }
+        var test = domainName("https://youtube.com");
+        console.log(test);
+    </script>
+</body>
+
+</html>
