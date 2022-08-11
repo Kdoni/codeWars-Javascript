@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function duplicateCount(text) {
+            var small = text.toLowerCase();
+            var result = [];
+            for (var i = 0; i < small.length; i++) {
+                for (var x = i + 1; x < small.length; x++) {
+                    if (small[i] === small[x]) {
+                        result.push(small[i]);
+                    }
+                }
+            }
+            var final = result.filter(function (number, index, array) {
+                return array.indexOf(number) === index;
+            });
+            return final.length;
+        }
+        var test = duplicateCount("abcdabb");
+        console.log(test);
+    </script>
+</body>
+
+</html>
