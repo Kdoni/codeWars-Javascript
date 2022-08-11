@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function feast(beast, dish) {
+            var beastFirst = beast[0];
+            var beastLast = beast[beast.length - 1];
+            var dishFirst = dish[0];
+            var dishLast = dish[dish.length - 1];
+            if (beastFirst === dishFirst && beastLast === dishLast) {
+                return true;
+            }
+            return false;
+        }
+        var test = feast("great blue heron", "garlic naan");
+        console.log(test);
+    </script>
+</body>
+
+</html>
