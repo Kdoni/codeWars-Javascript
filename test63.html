@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function dirReduc(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (Math.abs(arr.indexOf("NORTH") - arr.indexOf("SOUTH")) === 1 && arr.indexOf("SOUTH") !== -1 && arr.indexOf("NORTH") !== -1) {
+                    arr.splice(arr.indexOf("NORTH"), 1);
+                    arr.splice(arr.indexOf("SOUTH"), 1);
+                }
+                if (Math.abs(arr.indexOf("EAST") - arr.indexOf("WEST")) === 1 && arr.indexOf("EAST") !== -1 && arr.indexOf("WEST") !== -1) {
+                    arr.splice(arr.indexOf("EAST"), 1);
+                    arr.splice(arr.indexOf("WEST"), 1);
+                }
+            }
+            return arr;
+        }
+        var test = dirReduc(["SOUTH", "SOUTH", "NORTH", "EAST", "WEST"]);
+        console.log(test);
+    </script>
+</body>
+
+</html>
