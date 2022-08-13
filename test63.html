@@ -11,19 +11,44 @@
 <body>
     <script>
         function dirReduc(arr) {
-            for (var i = 0; i < arr.length; i++) {
-                if (Math.abs(arr.indexOf("NORTH") - arr.indexOf("SOUTH")) === 1 && arr.indexOf("SOUTH") !== -1 && arr.indexOf("NORTH") !== -1) {
-                    arr.splice(arr.indexOf("NORTH"), 1);
-                    arr.splice(arr.indexOf("SOUTH"), 1);
-                }
-                if (Math.abs(arr.indexOf("EAST") - arr.indexOf("WEST")) === 1 && arr.indexOf("EAST") !== -1 && arr.indexOf("WEST") !== -1) {
-                    arr.splice(arr.indexOf("EAST"), 1);
-                    arr.splice(arr.indexOf("WEST"), 1);
+            const result = []
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === "NORTH" && arr[i + 1] === "SOUTH" || arr[i] === "SOUTH" && arr[i + 1] === "NORTH" || arr[i] === "EAST" && arr[i + 1] === "WEST" || arr[i] === "WEST" && arr[i + 1] === "EAST") {
+                    i++
+                } else {
+                    if (result[result.length - 1] === "NORTH" && arr[i] === "SOUTH" || result[result.length - 1] === "SOUTH" && arr[i] === "NORTH" || result[result.length - 1] === "EAST" && arr[i] === "WEST" || result[result.length - 1] === "WEST" && arr[i] === "EAST") {
+                        result.pop()
+                    } else {
+                        result.push(arr[i])
+                    }
                 }
             }
-            return arr;
+            return result
         }
-        var test = dirReduc(["SOUTH", "SOUTH", "NORTH", "EAST", "WEST"]);
+        // function dirReduc(arr) {
+        //     console.log(arr.lastIndexOf("NORTH"));
+        //     console.log(arr.lastIndexOf("SOUTH"));
+        //     console.log(arr.pop());
+
+
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (Math.abs(arr.indexOf("NORTH") - arr.indexOf("SOUTH")) === 1 && arr.indexOf("SOUTH") !== -1 && arr.indexOf("NORTH") !== -1) {
+        //         arr.splice(arr.indexOf("NORTH"), 1);
+        //         arr.splice(arr.indexOf("SOUTH"), 1);
+        //     }
+        //     if (Math.abs(arr.indexOf("EAST") - arr.indexOf("WEST")) === 1 && arr.indexOf("EAST") !== -1 && arr.indexOf("WEST") !== -1) {
+        //         arr.splice(arr.indexOf("EAST"), 1);
+        //         arr.splice(arr.indexOf("WEST"), 1);
+        //     }
+        // }
+        // return arr;
+        // for (var i = 0; i < arr.length; i++) {
+        //     for (var x = i + 1; x < arr.length; x++) {
+
+        //     }
+        // }
+
+        var test = dirReduc(["NORTH", "SOUTH", "NORTH", "EAST", "WEST"]);
         console.log(test);
     </script>
 </body>
