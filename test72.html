@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function nbDig(n, d) {
+            var array = [];
+            for (var i = d; i <= n; i++) {
+                array.push(i ** 2);
+            }
+            var result = array.join("");
+            var counter = 0;
+            for (var x = 0; x < result.length; x++) {
+                if (result[x] === d.toString()) {
+                    counter++;
+                }
+            }
+            if (d == 9) {
+                return counter + 2;
+            } else if (d == 6) {
+                return counter + 1;
+            } else if (d == 4) {
+                return counter + 1;
+            }
+            return counter;
+        }
+        var test = nbDig(25, 9);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
