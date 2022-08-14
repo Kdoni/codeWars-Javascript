@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sumArray(array) {
+            var big = -Infinity;
+            var small = Infinity;
+            if (array === null || array === undefined) {
+                return 0;
+            } else if (array.length <= 0) {
+                return 0;
+            }
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] > big) {
+                    big = array[i];
+                }
+                if (array[i] < small) {
+                    small = array[i];
+                }
+            }
+            console.log(small, big);
+            var out = array.splice(array.indexOf(small), 1);
+            var oust = array.splice(array.indexOf(big), 1);
+            return array.reduce((a, b) => a + b, 0);
+
+        }
+        var test = sumArray([0, 1, 6, 10, 10]);
+        console.log(test);
+    </script>
+
+</body>
+
+</html>
