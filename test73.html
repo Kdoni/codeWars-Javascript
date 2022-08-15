@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function points(games) {
+            var result = [];
+            for (var i = 0; i < games.length; i++) {
+                result.push(games[i].split(":"));
+            }
+            var counter = 0;
+            for (var x = 0; x < result.length; x++) {
+                if (result[x][0] > result[x][1]) {
+                    counter += 3;
+                } else if (result[x][0] === result[x][1]) {
+                    counter++;
+                }
+            }
+            return counter;
+        }
+        var test = points(['1:1', '2:2', '3:3', '4:4', '2:2', '3:3', '4:4', '3:3', '4:4', '4:4']);
+        console.log(test);
+    </script>
+</body>
+
+</html>
