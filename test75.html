@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function high(x) {
+            var scoreCard = [];
+            var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+            console.log(alphabet.indexOf("e"));
+            var splitted = x.split(" ");
+            for (var i = 0; i < splitted.length; i++) {
+                // console.log(splitted[i]);
+                for (var j = 0; j < splitted[i].length; j++) {
+                    scoreCard.push(alphabet.indexOf(splitted[i][j]) + 1);
+                    // console.log(splitted[i][j]);
+                    // console.log(alphabet.indexOf(splitted[i][j]) + 1)
+                }
+            }
+            var kappa = [];
+            // for (var i = 0; i < scoreCard.length; i++) {
+            //     console.log(splitted[i]);
+            for (var j = 0; j < splitted.length; j++) {
+                kappa.push(scoreCard.splice(0, splitted[j].length));
+            }
+            var keepo = kappa.map((a) => {
+                return a.reduce((b, d) => parseInt(b) + parseInt(d));
+            })
+            var largest = -Infinity;
+            for (var i = 0; i < keepo.length; i++) {
+                if (keepo[i] > largest) {
+                    largest = keepo[i];
+                }
+            }
+            console.log(kappa);
+            console.log(keepo.indexOf(largest));
+            console.log(largest);
+            console.log(keepo);
+            return splitted[keepo.indexOf(largest)];
+            // for (var i = 0; i < x.length; i++) {
+            //     for (var j = 0; j < alphabet.length; j++) {
+            //         if (x[i] === alphabet[j]) {
+            //             scoreCard.push(alphabet.indexOf(alphabet[j]) + 1);
+            //         }
+            //     }
+            // }
+        }
+        var test = high('what time are we climbing up the volcano');
+        console.log(test);
+    </script>
+</body>
+
+</html>
