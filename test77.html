@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function scored(phrase) {
+            //create a variable containing all the letters of the alphabet.
+            var alphabet = "abcdefghijklmnopqrstuvwxyz";
+            //split the phrase into array items.
+            var splitted = phrase.split(" ");
+            //create 3 variables to increment with
+            var maxWord = "";
+            var currentScore = 0;
+            var maxScore = 0;
+            //iterate through each item of the array(slitted);
+            for (var i = 0; i < splitted.length; i++) {
+                //keep resetting the current score to ultimately match the highest one
+                currentScore = 0;
+                //iterate through each letter of each word
+                for (var x = 0; x < splitted[i].length; x++) {
+                    //add to the current score the sum of the scores of each letter of each word.
+                    currentScore += alphabet.indexOf(splitted[i][x]);
+                }
+                //the if applies to the first iteration not the second one!!!!
+                //find max word same principle like every other Max.
+                if (currentScore > maxScore) {
+                    maxScore = currentScore;
+                    //the maxWord is the word in which the maxScore is larger than the current score
+                    maxWord = splitted[i];
+                }
+            }
+            //return the maxWord;
+            return maxWord;
+        }
+        var test = scored("Hello everyone my name is Kripp and I am not cringe");
+        console.log(test);
+    </script>
+</body>
+
+</html>
