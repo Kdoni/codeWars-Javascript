@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function arrayDiff(a, b) {
+            if (a.length === 0) {
+                return a;
+            } else if (b.length === 0) {
+                return a;
+            }
+            var cringeArray = [];
+            for (var i = 0; i < a.length; i++) {
+                if (!b.includes(a[i])) {
+                    cringeArray.push(a[i]);
+                }
+            }
+            return cringeArray;
+        }
+
+        // for (var i = 0; i < a.length; i++) {
+        //     if (a[i] === b[i]) {
+        //         console.log(a[i]);
+        //         console.log(b[i]);
+        //         console.log(a.slice(a.indexOf(a[i]), 1));
+        //     }
+        // }
+        // var sort1 = a.sort();
+        // var sort2 = b.sort();
+        // while (sort1[0] === sort2[0]) {
+        //     sort1.shift();
+        //     sort2.shift();
+        // }
+        // return sort1;
+        // for (var i = 0; i < a.length; i++) {
+        //     b.push(a[i]);
+        // }
+        // sorted = b.sort();
+        // // console.log(b.splice(0, 4));
+        // // console.log(b);
+        // for (var i = 0; i < sorted.length; i++) {
+        //     if (b[i] === b[i + 1]) {
+        //         sorted.splice(0, 2)
+        //     }
+        // }
+        // return sorted;
+
+        // // return b.filter((c, d) => b.indexOf(c) === d);
+        // // var result = [];
+        // // if (a.length === 0) {
+        // //     return a;
+        // // } else if (b.length === 0) {
+        // //     return a;
+        // // }
+        // // for (var i = 0; i < a.length; i++) {
+        // //     for (var x = 0; x < b.length; x++) {
+        // //         if (a[i] !== b[x]) {
+        // //             result.push(a[i]);
+        // //         }
+        // //     }
+        // // }
+        // // return result;
+
+        var test = arrayDiff([1, 2, 2], [2]);
+        console.log(test);
+    </script>
+</body>
+
+</html>
